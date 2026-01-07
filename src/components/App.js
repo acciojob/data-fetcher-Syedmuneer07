@@ -5,9 +5,10 @@ import './../styles/App.css';
 const App = () => {
   const [data , setData]=useState(null);
   const [loading, setLoading]=useState(false);
-  const [errot, setError]=useState(null);
+  const [error , setError]=useState(null);
 
   useEffect(()=>{
+    setLoading(true);
     fetch("https://dummyjson.com/products")
       .then((response)=>response.json())
       .then((json)=>{
